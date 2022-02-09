@@ -19,6 +19,6 @@ Set-Location "C:\cwagent"
 
 Set-Location “C:\Program Files\Amazon\AmazonCloudWatchAgent”
 
-.\amazon-cloudwatch-agent-ctl.ps1 -a fetch-config -m ec2 -c ssm:${ssm_cloudwatch_config} -s
+.\amazon-cloudwatch-agent-ctl.ps1 -a fetch-config -m ec2 -c ssm:${cw_config} -s
 
 </powershell>
