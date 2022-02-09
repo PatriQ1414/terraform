@@ -88,7 +88,7 @@ locals {
 
   userdata = templatefile("user_data.ps1", {
 
-    ssm_cloudwatch_config = aws_ssm_parameter.my_parameter.name
+    cw_config = aws_ssm_parameter.my_parameter.name
 
   })
 
@@ -96,7 +96,7 @@ locals {
 
 locals {
 
-  ssm_cloudwatch_config = aws_ssm_parameter.my_parameter.name
+  cw_config = aws_ssm_parameter.my_parameter.name
 
 }
 
