@@ -1,0 +1,45 @@
+{
+    "metrics": {
+        "append_dimensions": {
+            "InstanceId": "${aws:InstanceId}",
+            "AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+            "InstanceType": "${aws:InstanceType}",
+            "ImageId": "${aws:ImageId}"
+        },
+        "metrics_collected": {
+            "LogicalDisk": {
+                "metrics_collection_interval": 60,
+                "resources": [
+                    "*"
+                ],
+                "measurement": [
+                    {
+                        "name": "% Free Space",
+                        "unit": "Percent"
+                    }
+                ]
+            },
+            "Memory": {
+                "metrics_collection_interval": 60,
+                "measurement": [
+                    "Available MBytes"
+                ]
+            }
+        },
+        "aggregation_dimensions": [
+           [
+                "InstanceId"
+            ],
+            [
+                "InstanceType"
+            ],
+            [
+                "AutoScalingGroupName"
+            ],
+            [
+                "InstanceId",
+                "InstanceType"
+            ]
+        ]
+    }
+}
